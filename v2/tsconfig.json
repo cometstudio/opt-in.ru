@@ -21,5 +21,8 @@
     "src/**/*.js",
     "src/**/*.ts",
     "src/**/*.vue"
-  ]
+  ],
+  "vueCompilerOptions": {
+    "experimentalDisableTemplateSupport": true
+  }
 }
