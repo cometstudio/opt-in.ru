@@ -24,7 +24,7 @@ main
 
 <script lang="ts">
 import {defineComponent, onMounted} from 'vue'
-import FormComponent from '@/components/app/Form.vue'
+import FormComponent from '@/components/app/_Form.vue'
 
 export default defineComponent({
 	components: {
