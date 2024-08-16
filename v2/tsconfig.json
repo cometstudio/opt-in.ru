@@ -17,7 +17,7 @@
       "tslib": ["./node_modules/tslib/tslib.d.ts"]
     }
   },
-  //"files": [],
+  "files": [],
   //  "references": [
   //    {
   //      "path": "./tsconfig.node.json"
