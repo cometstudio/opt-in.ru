@@ -26,7 +26,7 @@ export default defineComponent({
 
     const {
       pickErrorMessages
-    } = useForm()
+    } = useForm({})
 
     const error_messages = computed(() => pickErrorMessages(props.errors, props.property))
 
