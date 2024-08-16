@@ -15,23 +15,23 @@
 
       ],
       "tslib": ["./node_modules/tslib/tslib.d.ts"]
-    },
-    "files": [],
-    //  "references": [
-    //    {
-    //      "path": "./tsconfig.node.json"
-    //    },
-    //    {
-    //      "path": "./tsconfig.app.json"
-    //    }
-    //  ],
-    "include": [
-      "src/**/*.js",
-      "src/**/*.ts",
-      "src/**/*.vue"
-    ],
-    "exclude": [
-      //"node_modules"
-    ]
-  }
+    }
+  },
+  //"files": [],
+  //  "references": [
+  //    {
+  //      "path": "./tsconfig.node.json"
+  //    },
+  //    {
+  //      "path": "./tsconfig.app.json"
+  //    }
+  //  ],
+  "include": [
+    "src/**/*.js",
+    "src/**/*.ts",
+    "src/**/*.vue"
+  ],
+  "exclude": [
+    //"node_modules"
+  ]
 }
