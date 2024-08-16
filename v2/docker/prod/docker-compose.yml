@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  httpd:
+    container_name: '${APP_CONTAINER_NAME}_httpd'
+    restart: always
+    build:
+      context: ../../
+      dockerfile: ./docker/prod/Dockerfile
+      args:
+        - 'APP_ENV=${APP_ENV}'
+    networks:
+      - opt-in-net
+    ports:
+      - '${APP_PORT}:80'
+networks:
+  opt-in-net:
+    external: true

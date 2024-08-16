@@ -1,0 +1,47 @@
+// Limit max text line(s)
+@mixin lineClamp($lines: 1){
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+}
+
+// Round corner(s)
+@mixin round($radius: var(--bulma-radius), $position: all) {
+  @if($position == top-left){
+    border-top-left-radius: $radius;
+    -moz-border-radius-topleft: $radius;
+    -webkit-border-top-left-radius: $radius;
+  } @else if($position == top-right){
+    border-top-right-radius: $radius;
+    -moz-border-radius-topright: $radius;
+    -webkit-border-top-right-radius: $radius;
+  } @else if($position == bottom-left){
+    border-bottom-left-radius: $radius;
+    -moz-border-radius-bottomleft: $radius;
+    -webkit-border-bottom-left-radius: $radius;
+  } @else if($position == bottom-right){
+    border-bottom-right-radius: $radius;
+    -moz-border-radius-bottomright: $radius;
+    -webkit-border-bottom-right-radius: $radius;
+  } @else {
+    border-radius: $radius;
+    -moz-border-radius: $radius;
+    -webkit-border-radius: $radius;
+  }
+}
+
+@mixin border($border: var(--bulma-control-border-width) var(--bulma-border-weak) solid, $position: all) {
+  @if($position == top){
+    border-top: $border;
+  } @else if($position == right){
+    border-right: $border;
+  } @else if($position == bottom){
+    border-bottom: $border;
+  } @else if($position == left){
+    border-left: $border;
+  } @else {
+    border: $border;
+  }
+}

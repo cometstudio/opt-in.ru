@@ -1,0 +1,23 @@
+version: '3.9'
+
+services:
+  nodejs:
+    container_name: ${APP_CONTAINER_NAME}_nodejs_${APP_VERSION}
+    build:
+      context: ../../
+      dockerfile: ./docker/dev/Dockerfile
+    volumes:
+      - ../../node_modules:/app/node_modules
+      - ../../:/app
+    networks:
+      - opt-in-net
+    ports:
+      - ${APP_PORT}:5173
+
+volumes:
+  node_modules:
+networks:
+  default:
+    external: false
+  opt-in-net:
+    external: true

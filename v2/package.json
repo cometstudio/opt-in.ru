@@ -1,0 +1,47 @@
+{
+  "name": "opt-in.ru",
+  "version": "2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "run-p type-check \"build-only {@}\" --",
+    "preview": "vite preview",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --build --force"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.2",
+    "@fortawesome/free-regular-svg-icons": "^6.5.2",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/vue-fontawesome": "^3.0.8",
+    "axios": "^1.7.2",
+    "bulma": "^1.0.1",
+    "bulma-checkradio": "^2.1.3",
+    "bulma-switch": "^2.0.4",
+    "lodash": "^4.17.21",
+    "luxon": "^3.4.4",
+    "pinia": "^2.1.7",
+    "pinia-plugin-persistedstate": "^3.2.1",
+    "vue": "^3.4.21",
+    "vue-axios": "^3.5.2",
+    "vue-i18n": "^9.13.1",
+    "vue-router": "^4.3.0"
+  },
+  "devDependencies": {
+    "@tsconfig/node20": "^20.1.4",
+    "@types/lodash": "^4.17.6",
+    "@types/node": "^20.12.5",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "@vue/tsconfig": "^0.5.1",
+    "npm-run-all2": "^6.1.2",
+    "pug": "^3.0.3",
+    "pug-plain-loader": "^1.1.0",
+    "sass": "^1.77.2",
+    "sass-loader": "^14.2.1",
+    "tslib": "^2.6.3",
+    "typescript": "~5.4.0",
+    "vite": "^5.2.8",
+    "vue-tsc": "^2.0.11"
+  }
+}

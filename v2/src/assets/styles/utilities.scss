@@ -1,0 +1,9 @@
+//@use "/node_modules/bulma/sass/utilities" with (
+//  $family-primary: "'Playfair Display', serif",
+//  $primary: #4648c1,
+//);
+
+@import "./variables";
+@import "/node_modules/bulma/sass/utilities/mixins";
+@import "/node_modules/bulma/sass/utilities";
+@import "./mixins";

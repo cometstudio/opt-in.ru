@@ -1,0 +1,45 @@
+@import "/node_modules/bulma/sass/base";
+@import "/node_modules/bulma/sass/components";
+@import "/node_modules/bulma/sass/elements";
+@import "/node_modules/bulma/sass/form";
+@import "/node_modules/bulma/sass/grid";
+@import "/node_modules/bulma/sass/helpers";
+@import "/node_modules/bulma/sass/layout";
+@import "/node_modules/bulma/sass/themes";
+@import "@/assets/styles/checkradio";
+@import "@/assets/styles/switch";
+
+//@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+.bd-example:not(:last-child),
+.bd-options:not(:last-child),
+.bd-pills:not(:last-child),
+.bd-snippet:not(:last-child),
+.bd-tabs:not(:last-child),
+.block:not(:last-child),
+.box:not(:last-child),
+.breadcrumb:not(:last-child),
+.buttons:not(:last-child),
+.card:not(:last-child),
+.content:not(:last-child),
+.field:not(:last-child),
+.file:not(:last-child),
+.fixed-grid:not(:last-child),
+.grid:not(:last-child),
+.level:not(:last-child),
+.media:not(:last-child),
+.message:not(:last-child),
+.notification:not(:last-child),
+.pagination:not(:last-child),
+.progress:not(:last-child),
+.skeleton-block:not(:last-child),
+.subtitle:not(:last-child),
+.table-container:not(:last-child),
+.table:not(:last-child),
+.tabs:not(:last-child),
+.tags:not(:last-child),
+.title:not(:last-child) {
+  margin-bottom: var(--bulma-block-spacing);
+}
