@@ -5,7 +5,8 @@ footer.container.is-fullhd
 		.columns
 			.column.is-half
 				h4.title.is-size-5 Как с нами связаться
-				p Opt-in
+				p
+					strong Opt-in
 				p Сервис управления персональными подписками через смс
 				p Тел: +7 (495) 970-04-03
 				p E-mail: info@opt-in.ru

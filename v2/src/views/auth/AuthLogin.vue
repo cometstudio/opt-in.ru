@@ -13,9 +13,9 @@
 				label.label Повторите символы
 				.control.captcha.is-flex
 					.captcha-img.mr-2
-						img(:src="login_form.captcha.src")
+						img(v-if="!isProcessRunning('get_captcha')" :src="login_form.captcha.src")
 					.captcha-input
-						input.input(v-model="login_form.captcha.code" :class="{'is-danger': loginFormHasErrorMessages(login_form_errors, 'captcha.code')}" type="text" placeholder="" autocomplete="off")
+						input.input(v-model="login_form.captcha.code" :class="{'is-warning': Object.keys(login_form_errors).length, 'is-danger': loginFormHasErrorMessages(login_form_errors, 'captcha.code')}" type="text" placeholder="" autocomplete="off")
 				FieldErrorMessageComponent(:errors="login_form_errors" d="auth.login.form.validation" property="captcha.code")
 			.field(v-if="verification_expected")
 				label.label  Код из SMS
@@ -27,8 +27,8 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, ref, shallowRef, computed, onBeforeMount, onBeforeUnmount} from 'vue'
-import {useRouter} from 'vue-router'
+import {defineComponent, shallowRef, computed, onBeforeMount, onBeforeUnmount} from 'vue'
+import {useRouter, useRoute} from 'vue-router'
 import useAuthStore from '@/pinia/auth'
 import useForm from '@/composables/useForm'
 import useProcesses from '@/composables/useProcesses'
@@ -97,6 +97,9 @@ export default defineComponent({
 					.finally(() => stopProcess('login'))
 		}
 
+		onBeforeMount(() => {
+			if(auth_store.is_user_logged_in) router.push({name: 'app'})
+		})
 		onBeforeMount(resetLoginFormErrors)
 		onBeforeMount(getCaptcha)
 		onBeforeUnmount(resetProcesses)

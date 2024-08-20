@@ -1,8 +1,8 @@
 <template lang="pug">
 .container.is-fullhd
 	section.section
-		h1.title.is-size-2 Предложение (оферта)
-		h2.title.is-size-4  к <router-link :to="{name: 'agreement'}">Предложению</router-link> (оферте) заключить соглашение об использовании Сайта
+		h1.title.is-size-2 Приложение
+		h2.title.is-size-4  к <router-link :to="{name: 'app.agreement'}">Предложению</router-link> (оферте) заключить соглашение об использовании Сайта
 		h4.title.is-size-6 Список третьих лиц, в отношении которых Абонент даёт согласие на передачу и обработку своих персональных данных:
 		p ООО «Т2 Мобайл»
 		p АО "АКОС"
@@ -91,13 +91,16 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, onMounted} from 'vue'
+import {defineComponent, onBeforeMount, onMounted} from 'vue'
+import useDOM from "@/composables/useDOM";
 
 export default defineComponent({
-	components: {},
 	setup() {
+		const DOM = useDOM()
 
-
+		onBeforeMount(() => {
+			DOM.setHTMLDocumentTitle('Приложение к Соглашение об использовании Сайта')
+		})
 		return {
 
 		}

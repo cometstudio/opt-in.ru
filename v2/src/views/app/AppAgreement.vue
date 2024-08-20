@@ -142,13 +142,16 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, onMounted} from 'vue'
+import {defineComponent, onBeforeMount} from 'vue'
+import useDOM from "@/composables/useDOM";
 
 export default defineComponent({
-	components: {},
 	setup() {
+		const DOM = useDOM()
 
-
+		onBeforeMount(() => {
+			DOM.setHTMLDocumentTitle('Соглашение об использовании Сайта')
+		})
 		return {
 
 		}

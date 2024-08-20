@@ -14,7 +14,7 @@
 					span.tag.is-medium
 						SenderCategoryFilterTagComponent(:category="senders_store.filter.content.category")
 						button.delete(@click.prevent="dropSendersCategory")
-			.column.is-narrow
+			.column.is-narrow(v-if="false")
 				button.button.is-primary.is-outlined {{ t('app.actions.add') }}
 </template>
 

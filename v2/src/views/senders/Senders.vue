@@ -10,14 +10,14 @@
 </template>
 
 <script lang="ts">
-import {defineComponent, ref, onBeforeMount, onBeforeUnmount, watch} from 'vue'
+import {defineComponent, ref, onBeforeMount, onBeforeUnmount} from 'vue'
 import useSendersStore from '@/pinia/senders'
-import useWatchers from '@/composables/useWatchers'
 import PaginatedList, {defaultPaginatedList} from '@/types/app/PaginatedList'
 import Sender from '@/types/senders/Sender'
 import SendersFilterComponent from '@/components/senders/SendersFilter.vue'
 import SenderCardComponent from '@/components/senders/SenderCard.vue'
 import PaginationComponent from '@/components/app/Pagination.vue'
+import useDOM from "@/composables/useDOM";
 
 export default defineComponent({
 	components: {
@@ -27,14 +27,8 @@ export default defineComponent({
 	},
 	setup() {
 		const senders_store = useSendersStore()
+		const DOM = useDOM()
 		const senders = ref<PaginatedList<Sender>>(defaultPaginatedList())
-
-		const {
-			watchers,
-			unwatchAll,
-		} = useWatchers([
-			'senders_filter_content',
-		])
 
 		const filterSenders = (): Promise<PaginatedList<Sender>> => senders_store.filterSenders()
 				.then(r => senders.value = r)
@@ -44,7 +38,9 @@ export default defineComponent({
 			await filterSenders()
 		}
 
-		onBeforeUnmount(unwatchAll)
+		onBeforeMount(() => {
+			DOM.setHTMLDocumentTitle('Каталог отправителей')
+		})
 
 		return {
 			senders,

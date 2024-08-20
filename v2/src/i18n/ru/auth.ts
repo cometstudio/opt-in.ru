@@ -1,39 +1,42 @@
 export default {
 	title: 'Добро пожаловать',
-	form: {
-		email: {
-			label: 'E-mail',
-		},
-		password: {
-			label: 'Пароль',
-		},
-		actions: {
-			login: 'Войти',
-			logout: 'Выйти',
-			signup: 'Зарегистрироваться',
-			reset_password: 'Сменить забытый пароль',
-		},
-		validation: {
-			email: {
-				required: 'Укажите e-mail',
-				email: 'Укажите корректный e-mail',
-				exists: 'Этот e-mail уже зарегистрирован',
-				unverified: 'Этот e-mail зарегистрирован, но не подтверждён',
-			},
-			password: {
-				required: 'Укажите пароль',
-				min: 'Пароль должен быть 6 символов минимум',
-				max: 'Пароль должен быть 32 символа максимум',
-				letters: 'Пароль должен содержать буквы',
-				numbers: 'Пароль должен содержать цифры',
-				mixed: 'Пароль должен содержать буквы и цифры',
-				failed: 'Ошибочный пароль',
-
-			},
-		},
-	},
 	login: {
 		title: 'Войти',
+		form: {
+			email: {
+				label: 'E-mail',
+			},
+			password: {
+				label: 'Пароль',
+			},
+			actions: {
+				login: 'Войти',
+				logout: 'Выйти',
+				signup: 'Зарегистрироваться',
+				reset_password: 'Сменить забытый пароль',
+			},
+			validation: {
+				user: {
+					phone: {
+						required: 'Укажите номер телефона',
+						numeric: 'Номер телефона должен содержать цифры с кодом страны',
+						exists: 'Этот номер телефона уже зарегистрирован',
+					},
+					verification_key: {
+						required: 'Укажите код из SMS',
+						digits: 'Укажите правильный код из SMS',
+						numeric: 'Укажите правильный код из SMS',
+						exists: 'Укажите правильный код из SMS',
+					},
+				},
+				captcha: {
+					code: {
+						required: 'Повторите символы',
+						failed: 'Повторите символы правильно',
+					},
+				},
+			},
+		},
 	},
 	signup: {
 		title: 'Зарегистрироваться',
