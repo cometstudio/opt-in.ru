@@ -11,13 +11,13 @@
 
 <script lang="ts">
 import {defineComponent, ref, onBeforeMount, onBeforeUnmount} from 'vue'
-import useSendersStore from '@/pinia/senders'
 import PaginatedList, {defaultPaginatedList} from '@/types/app/PaginatedList'
 import Sender from '@/types/senders/Sender'
+import useDOM from '@/composables/useDOM'
+import useSendersStore from '@/pinia/senders'
 import SendersFilterComponent from '@/components/senders/SendersFilter.vue'
 import SenderCardComponent from '@/components/senders/SenderCard.vue'
 import PaginationComponent from '@/components/app/Pagination.vue'
-import useDOM from "@/composables/useDOM";
 
 export default defineComponent({
 	components: {
